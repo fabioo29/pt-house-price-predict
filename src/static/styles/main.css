@@ -1,0 +1,207 @@
+body {
+  background-image: url(../images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.board {
+  background-color: #ffffffc2;
+  position: relative;
+  border-radius: 20px;
+  margin: 3vw auto;
+  width: 90%;
+  box-shadow: 0px 0px 20px 20px #0000008f;
+  text-align: center;
+}
+
+.title {
+  font-family: "Roboto", sans-serif;
+  font-size: 2vw;
+  color: #000000;
+  text-align: center;
+  text-transform: capitalize;
+  font-weight: 600;
+  font-variant: small-caps;
+  padding: 1vw 0vw 1vw 0vw;
+}
+
+.separator {
+  border-top: 5px dashed #000000bf;
+}
+
+input,
+select {
+  font-size: 1vw;
+}
+
+.form {
+  width: 90%;
+  position: relative;
+  padding: 2vw 0px;
+  height: 100%;
+  font-size: 1vw;
+  display: inline-block;
+}
+
+.form-container {
+  width: clamp(10px, 50vw, 1000px);
+  margin: 0 auto;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+input[type="number"]::-webkit-inner-spin-button {
+  opacity: 1;
+  width: auto;
+}
+
+.select-house {
+  margin: 2vw auto 1vw auto;
+  width: 15vw;
+}
+
+.select-house p {
+  font-family: "Roboto", sans-serif;
+  text-transform: capitalize;
+  font-size: 1.2em;
+  font-weight: 600;
+  font-variant: small-caps;
+  text-align: center;
+}
+
+/* find every img on select-house */
+.select-house img {
+  max-width: 100%;
+  max-height: 100%;
+  margin: auto;
+}
+
+.select-details > div {
+  margin-bottom: 1vw;
+}
+
+select,
+input[type="number"] {
+  border: 0px;
+  outline: 0px;
+  background: transparent;
+  border-bottom: solid 1px black;
+}
+
+.location,
+.division,
+input[type="number"],
+select {
+  text-align: center;
+}
+
+.location > select {
+  width: 35%;
+}
+
+.divisions {
+  text-align: center;
+}
+
+.built-area {
+  text-align: center;
+}
+
+#submit-price {
+  text-align: center;
+}
+
+#submit-price > input {
+  border-radius: 5px 0 0 5px;
+  padding: 10px;
+  background-color: white;
+  color: inherit;
+  border: 1px solid black;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+}
+
+.price {
+  border: 1px solid black;
+  padding: 10px;
+  border-radius: 0 5px 5px 0;
+  background-color: white;
+}
+
+select #parish {
+  max-width: 100%;
+}
+
+/* Checkbox Cards */
+
+.container {
+  text-align: center;
+  margin: 0 auto;
+  max-width: 80%;
+}
+
+ul.ks-cboxtags {
+  list-style: none;
+  padding-left: 0px;
+}
+ul.ks-cboxtags li {
+  display: inline;
+}
+ul.ks-cboxtags li label {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 2px solid rgba(139, 139, 139, 0.3);
+  color: #adadad;
+  border-radius: 25px;
+  white-space: nowrap;
+  margin: 3px 0px;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: all 0.2s;
+}
+
+ul.ks-cboxtags li label {
+  padding: 0.5vw 1vw;
+  cursor: pointer;
+  color: black;
+}
+
+ul.ks-cboxtags li input[type="checkbox"]:checked + label {
+  border: 2px solid #000000;
+  background-color: #ffffff;
+  color: #000;
+  transition: all 0.2s;
+}
+
+ul.ks-cboxtags li input[type="checkbox"] {
+  position: absolute;
+  opacity: 0;
+  color: black;
+}
+
+/* carousel */
+
+.carousel-selector {
+  height: 100%;
+}
+
+.slick-prev:before {
+  color: black !important;
+}
+.slick-next:before {
+  color: black !important;
+}
+
+/* ballon.css */
+
+[aria-label][data-balloon-pos][data-balloon-pos="right"]:hover:after {
+  font-size: 0.8vw !important;
+}

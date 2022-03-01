@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Housing Price Predictor</title>
+    <link rel="icon" type="image/x-icon" href="../static/images/favicon.ico">
+    <link rel= "stylesheet" type= "text/css" href= "../static/styles/main.css">
+    <link rel="stylesheet" href="https://unpkg.com/balloon-css/balloon.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+    <script type="text/javascript" src="https://code.jquery.com/jquery-1.7.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="../static/main.js"></script>
+</head>
+<body>
+    <div class="board">
+        <div class="title">House Price Predictor (Portugal 🇵🇹)</div>
+        <div class="separator"></div>
+        <form class="form" id="data-form" method="post">
+            <div class="select-details">
+                <div class="location">
+                    <label id="label-location">O imóvel está situado em</label>
+                    <select name="district" id="district">
+                        {% for district in data.districts %}
+                            <option value="{{ district }}">{{ district }}</option>
+                        {% endfor %}
+                    </select>
+                    ,
+                    <label for="" ></label>
+                    <select name="county" id="county">
+                        <option value="{{ county }}">{{ county }}</option>
+                    </select>
+                    ,
+                    <label for="" ></label>
+                    <select name="parish" id="parish">
+                        <option value="{{ parish }}">{{ parish }}</option>
+                    </select>
+                </div>
+
+                <div class="divisions">
+                    O imóvel tem    
+                    <input type="number" name="rooms" id="rooms" value="3">
+                    <label id="label-rooms">divisões</label> e 
+                    <input type="number" name="bathrooms" id="bathrooms" value="1">
+                    <label id="label-bathrooms">WC</label>.
+                </div>
+
+                <div class="built-area">
+                    O imóvel tem  
+                    <input type="number" name="built_area" id="built_area" value="300">
+                    m2 de area.
+                </div>
+            
+                <div class="container">
+                    <ul class="ks-cboxtags">
+                        <li><input type="checkbox" id="fitted_wardrobes" value="fitted_wardrobes"><label for="fitted_wardrobes">roupeiros embutidos</label></li>
+                        <li><input type="checkbox" id="air_conditioning" value="air_conditioning"><label for="air_conditioning">ar condicionado</label></li>
+                        <li><input type="checkbox" id="terrace" value="terrace"><label for="terrace">terraço</label></li>
+                        <li><input type="checkbox" id="balcony" value="balcony"><label for="balcony">varanda</label></li>
+                        <li><input type="checkbox" id="storeroom" value="storeroom" checked><label for="storeroom">despensa</label></li>
+                        <li><input type="checkbox" id="with_lift" value="with_lift"><label for="with_lift">elevador</label></li>
+                        <li><input type="checkbox" id="swimming_pool" value="swimming_pool"><label for="swimming_pool">piscina</label></li>
+                        <li><input type="checkbox" id="garden" value="garden"><label for="garden">jardim</label></li>
+                        <li><input type="checkbox" id="green_area" value="green_area"><label for="green_area">paisagens verdes</label></li>
+                    </ul>
+                </div>
+            </div>
+            
+            
+            <div class="select-house">
+                <div class="carousel-selector">
+                    <div><img src="../static/images/house.jpg" value="NonApartment"><p>Moradia</p></div>
+                    <div><img src="../static/images/apartment.jpg" value="Apartment"><p>Apartamento</p></div>
+                </div>
+            </div>
+            
+            <div id="submit-price">
+                <input type="submit" value="Calcular estimativa">
+                <a class='price tooltip-big-text' aria-label="0€ - 0€" data-balloon-pos="right">0€</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

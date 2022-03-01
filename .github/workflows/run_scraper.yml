@@ -1,0 +1,31 @@
+# github workflow to run src/scrapers/scraper.py every day
+
+name: dataset scraper workflow
+
+on:
+  push:
+    branches:
+      - master
+  schedule:
+    - cron: "0 0 * * *" # runs at 00:00 UTC everyday
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: checkout repo content
+        uses: actions/checkout@v2
+      - name: Set up Python 3.6
+        uses: actions/setup-python@v2
+        with:
+          python-version: 3.6
+          cache: "pip"
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+      - name: Install chromium
+        run: sudo apt-get install -y chromium-browser
+      - name: Install openvpn
+        run: sudo apt-get install -y openvpn
+      - name: execute python script
+        run: python ./src/main.py
